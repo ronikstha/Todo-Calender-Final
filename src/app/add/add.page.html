@@ -5,7 +5,7 @@
         <ion-icon name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Add a note</ion-title>
+    <ion-title>Add A Task to your Calender</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,12 +13,12 @@
   <form [formGroup]="addForm">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Name your Todo Task</ion-label>
-        <ion-input type="text" placeholder="name for note" name="name" formControlName="name"></ion-input>
+        <ion-label position="stacked">Task Name</ion-label>
+        <ion-input type="text" placeholder="Name of your Todo Task " name="name" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Task Description</ion-label>
-        <ion-textarea name="note" formControlName="note"></ion-textarea>
+        <ion-textarea name="note" placeholder="Give a short description for your task" formControlName="note"></ion-textarea>
       </ion-item>
     </ion-list>
     <ion-button type="submit" expand="block" color="primary" [disabled]="!addForm.valid" (click)="submit()">

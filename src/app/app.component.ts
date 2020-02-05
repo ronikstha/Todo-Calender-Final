@@ -46,6 +46,7 @@ export class AppComponent {
       if( user ) {
         this.appPages = [
           {title: 'Notes' , url: '/notes', icon: 'home'},
+          {title: 'Calender', url: '', icon:'calender'},
           {title: 'Settings' , url: '/settings', icon: 'settings'}
         ]
         this.user = user;
