@@ -24,6 +24,8 @@ import { AddPageModule } from './add/add.module';
 import { NoteDetailPageModule } from './note-detail/note-detail.module';
 // camera 
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+//vibration 
+import {Vibration} from '@ionic-native/vibration/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,8 +46,11 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    // camera provider
-    Camera
+    // Camera provider  
+    // Camera,
+    
+    // vibration provider
+    Vibration   
   ],
   bootstrap: [AppComponent]
 })

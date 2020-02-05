@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { PictureService } from '../picture.service';
+import {VIbration} from '@ionic-native/vibration';
+
 
 @Component({
   selector: 'app-add',
@@ -14,7 +16,8 @@ export class AddPage implements OnInit {
   constructor( 
     private formBuilder: FormBuilder, 
     private modal: ModalController,
-    private picture: PictureService 
+    private picture: PictureService,
+    private vibration: Vibration
   ) { 
 
   }
@@ -28,7 +31,7 @@ export class AddPage implements OnInit {
 
   close() {
     this.modal.dismiss();
-  }
+  }md 
 
   submit() {
     // get data from form
@@ -41,5 +44,10 @@ export class AddPage implements OnInit {
 
   takePhoto() {
     this.picture.takePicture();
+  }
+
+  vibrate() {
+    this.vibration.vibrate(50);
+
   }
 }
