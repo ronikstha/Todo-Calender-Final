@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { PictureService } from '../picture.service';
-import {VIbration} from '@ionic-native/vibration';
+import { Vibration } from '@ionic-native/vibration/ngx';
 
 
 @Component({
@@ -48,6 +48,5 @@ export class AddPage implements OnInit {
 
   vibrate() {
     this.vibration.vibrate(50);
-
   }
 }
