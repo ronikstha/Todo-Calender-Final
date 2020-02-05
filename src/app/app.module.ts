@@ -9,10 +9,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgCalendarModule  } from 'ionic2-calendar';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage'  ;
+
 
 import { environment } from '../environments/environment';
 // modal imports
@@ -33,9 +36,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    SignupPageModule,
     AddPageModule,
-    NoteDetailPageModule
+    NoteDetailPageModule,
+    NgCalendarModule
   ],
   providers: [
     StatusBar,
