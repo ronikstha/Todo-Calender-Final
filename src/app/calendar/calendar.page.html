@@ -1,7 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>calendar</ion-title>
+    <ion-title>
+      {{ viewTitle }}
+    </ion-title>
   </ion-toolbar>
+
+  <ion-buttons>
+    <button io-button icon-only (click)="addEvent()">
+      <ion-icon name="add">  </ion-icon>
+    </button>
+  </ion-buttons>
 </ion-header>
 
 <ion-content>
@@ -14,7 +22,7 @@
     (onEventSelected)="onEventSelected($event)"
     (onTitleChanged)="onViewTitleChanged($event)"
     (onTimeSelected)="onTimeSelected($event)"
-    step="30">
+    step="30" class= "calendar">
     </calendar>
 
 </ion-content>
