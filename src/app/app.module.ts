@@ -38,6 +38,7 @@ import {Vibration} from '@ionic-native/vibration/ngx';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    SignupPageModule,
     AddPageModule,
     NoteDetailPageModule,
     NgCalendarModule
@@ -48,7 +49,7 @@ import {Vibration} from '@ionic-native/vibration/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // Camera provider  
     // Camera,
-    
+    Camera,
     // vibration provider
     Vibration   
   ],
