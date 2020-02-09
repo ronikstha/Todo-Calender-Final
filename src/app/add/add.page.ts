@@ -3,7 +3,8 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { PictureService } from '../picture.service';
 import { Vibration } from '@ionic-native/vibration/ngx';
-
+import { NavController, AlertController } from '@ionic/angular';
+import * as moment from 'moment/moment';
 
 @Component({
   selector: 'app-add',
@@ -17,9 +18,49 @@ export class AddPage implements OnInit {
     private formBuilder: FormBuilder, 
     private modal: ModalController,
     private picture: PictureService,
-    private vibration: Vibration
+    private vibration: Vibration,
+    public navCtrl: NavController, 
+    private modalCtrl: ModalController, 
+    private alertCtrl: AlertController
   ) { 
 
+  }
+
+  eventSource = [];
+  viewTitle: string; 
+  selectedDay = new Date();
+
+  calendar = { 
+    mode: 'month',
+    currentDate: this.selectedDay
+  };
+
+
+
+   addEvent() {
+}
+
+  onViewTitleChanged(title) {
+    this.viewTitle = title;
+  }
+
+  onEventSelected(event) {
+     let start = moment(event.startTime).format('LLLL');  
+     let end = moment(event.startTime).format('LLLL');
+  
+  }
+
+  onTimeSelected(ev) {
+    this.selectedDay = ev.selectedTIme;
+ 
+  }
+
+  onCurrentDateChanged(event: Date) {
+
+  }
+
+  onRangeChanged(ev) {
+    
   }
 
   ngOnInit() {
@@ -31,7 +72,7 @@ export class AddPage implements OnInit {
 
   close() {
     this.modal.dismiss();
-  }md 
+  }
 
   submit() {
     // get data from form
@@ -40,6 +81,7 @@ export class AddPage implements OnInit {
     let date = new Date();
     let noteData = { name: name, date: date, note: note };
     this.modal.dismiss( noteData );
+    this.vibration.vibrate(50);
   }
 
   takePhoto() {

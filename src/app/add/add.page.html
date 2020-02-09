@@ -10,6 +10,19 @@
 </ion-header>
 
 <ion-content>
+  
+
+  <!-- <calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"    
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="30" class= "calendar">
+  </calendar>
+      -->
+  
   <form [formGroup]="addForm">
     <ion-list>
       <ion-item>
@@ -21,6 +34,8 @@
         <ion-textarea name="note" placeholder="Give a short description for your task" formControlName="note"></ion-textarea>
       </ion-item>
     </ion-list>
+
+
     <ion-button type="submit" expand="block" color="primary" [disabled]="!addForm.valid" (click)="submit(); vibrate() ">
       Add
     </ion-button>

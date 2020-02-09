@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddPageRoutingModule } from './add-routing.module';
 
 import { AddPage } from './add.page';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { AddPage } from './add.page';
     FormsModule,
     IonicModule,
     AddPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgCalendarModule
   ],
   declarations: [AddPage]
 })

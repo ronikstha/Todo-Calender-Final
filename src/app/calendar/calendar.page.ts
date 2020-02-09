@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, AlertController } from '@ionic/angular';
 import * as moment from 'moment/moment';
 
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
   styleUrls: ['./calendar.page.scss'],
 })
-export class CalendarPage implements OnInit {
+
+export class CalendarPage {
 
 
   eventSource = [];
   viewTitle: string; 
   selectedDay = new Date();
 
-  calendar = {
+  calendar = { 
     mode: 'month',
     currentDate: this.selectedDay
   };
@@ -22,18 +24,18 @@ export class CalendarPage implements OnInit {
 
   constructor(
     public navCtrl: NavController, 
-    private modalCtrl: ModalController,
-    private alertCtrl: AlertController
+    private modalCtrl: ModalController, 
+    private alertCtrl: AlertController,
     ) { 
     
   }
 
-  addEvent() {
-    let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
-    // modal.present();
+  // addEvent() {
+  //   let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
+  //   modal.present();
 
 
-  }
+  // }
 
   onViewTitleChanged(title) {
     this.viewTitle = title;
@@ -45,7 +47,8 @@ export class CalendarPage implements OnInit {
 
     //  let alert = this.alertCtrl.create({
     //    title: '' + event.title,
-    //    subTitle: 'From: ' + start + '<br>'
+    //    subTitle: 'From: ' + start + '<br>To: ' + end,
+    //    buttons: ['OK']
     //  })
 
 

@@ -1,4 +1,8 @@
 ion-content {
+
+  .bg{
+    background: linear-gradient(to bottom,blue 50% , lightblue 100%);
+  }
   .logo-container{
     display: flex;
     justify-content: center;
